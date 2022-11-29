@@ -1,2 +1,1 @@
-git clone https://github.com/mathworks/physionet_ECG_data ./data
-rm README.md
+wget https://github.com/mathworks/physionet_ECG_data/raw/main/ECGData.zip
