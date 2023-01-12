@@ -4,7 +4,7 @@ import torch
 from torch import Tensor
 import torch.nn as nn
 from .transformers.layers import CrossAttention
-from .layers import EmbedAttenSeq
+from .simple_layers import EmbedAttenSeq
 
 
 class LatentEmbedder(nn.Module):
