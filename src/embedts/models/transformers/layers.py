@@ -1,9 +1,10 @@
-from typing import Optional
 import math
+from typing import Optional
+
 import torch
-from torch import Tensor
 import torch.nn as nn
 import torch.nn.functional as F
+from torch import Tensor
 
 
 class PositionalEncoding(nn.Module):
@@ -138,7 +139,9 @@ class TransformerAttn(nn.Module):
     Module that calculates self-attention weights using transformer like attention
     """
 
-    def __init__(self, dim_in=40, value_dim=40, key_dim=40) -> None:
+    def __init__(
+        self, dim_in: int = 40, value_dim: int = 40, key_dim: int = 40
+    ) -> None:
         """
         param dim_in: Dimensionality of input sequence
         param value_dim: Dimension of value transform
@@ -149,7 +152,7 @@ class TransformerAttn(nn.Module):
         self.query_layer = nn.Linear(dim_in, value_dim)
         self.key_layer = nn.Linear(dim_in, key_dim)
 
-    def forward(self, seq):
+    def forward(self, seq: Tensor):
         """
         param seq: Sequence in dimension [Seq len, Batch, Hidden size]
         """
